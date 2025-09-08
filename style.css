@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'bitterbold';
+    src: url('fonts/webfontkit-20250907-193848/bitter-bold-webfont.woff2') format('woff2'),
+         url('fonts/webfontkit-20250907-193848/bitter-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bitterregular';
+    src: url('fonts/webfontkit-20250907-193848/bitter-regular-webfont.woff2') format('woff2'),
+         url('fonts/webfontkit-20250907-193848/bitter-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'league_gothicregular';
+    src: url('fonts/webfontkit-20250907-194001/leaguegothic-regular-webfont.woff2') format('woff2'),
+         url('fonts/webfontkit-20250907-194001/leaguegothic-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(150, 29, 29);
+    font-family: 'bitterregular';
+}
+
+.upperShelf {
+    position: sticky;
+    top: -3em;
+    margin: 0;
+    padding: 2em;
+    background-color: rgb(129, 129, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0.25em 1em 0.5em rgba(77, 3, 3);
+}
+
+.upperShelf > button {
+    font-size: 1.5em;
+}
+
+.upperShelf > h2 {
+    font-family: 'league_gothicregular';
+    font-size: 2.5em;
+    padding-left: 2em
+}
+
+.shelf {
+    margin: 0;
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.book {
+    width: 20em;
+    padding: 2em;
+    margin-right: 0.25em;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0.5em 1em 0.5em rgb(77, 3, 3);
+}
+
+.book:last-of-type {
+    margin-right: 0;
+}
+
+.book:hover {
+    transition: 0.5s;
+    box-shadow: 0em 0em 1em gold;
+}
+
+.infoContainer > p:first-child {
+    font-family: 'bitterbold';
+}
+
+button {
+    font-family: 'bitterbold';
+    background-color: aqua;
+    border: solid 1px white;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: darkblue;
+    border: solid 1px black;
+    color: white;
+    transition: 0.5s;
+}
+
+#newBook {
+    font-family: 'bitterbold';
+    background-color: aqua;
+    border: solid 1px white;
+    border-radius: 1em;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+#newBook:hover {
+    cursor: pointer;
+    background-color: darkblue;
+    border: solid 1px black;
+    color: white;
+    transition: 0.5s;
+}
+
+#newBook:hover > .icon {
+    background-image: url("icons/plus-outline.png");
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon {
+    width: 1.25em;
+    height: 1.25em;
+    background-image: url("icons/plus.svg");
+    background-size: cover;
+    transition: background-image 0.5s;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1em;
+}
+
+dialog {
+    background-color:rgb(129, 129, 255);
+    border: solid 1px blue;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: 
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out,
+        overlay 0.7s ease-out allow-discrete,
+        display 0.7s ease-out allow-discrete;
+}
+
+dialog:open {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+@starting-style {
+    dialog:open {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+}
+
+dialog::backdrop {
+    background-color: transparent;
+    transition: 
+        display 0.7s allow-discrete,
+        overlay 0.7s allow-discrete,
+        background-color 0.7s;
+}
+
+dialog:open::backdrop {
+    background-color: rgba(121, 248, 62, 0.6);
+}
+
+@starting-style {
+    dialog:open::backdrop {
+        background-color: transparent;
+    }
+}
+
+input:focus {
+    border: solid 2px black;
+    transition: 0.5s;
+}
+/*
+input:invalid {
+    border: solid 5px red;
+}*/

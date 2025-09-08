@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="upperShelf">
+        <h2>Odin Book Collection</h2>
+        <div id="newBook">
+            <div class="icon">
+            </div>
+            <div class="text">Add Book</div>
+        </div>
+    </div>
+    <div class="shelf">
+        
+    </div>
+    <dialog id="adding" closedby="any">
+        <form>
+            <label for="bookName">
+                <h3>Name</h3>
+                <input id="bookName" type="text" placeholder="Moby Dick" maxlength="28">
+            </label>
+            <label for="authorName">
+                <h3>Author</h3>
+                <input id="authorName"type="text" placeholder="Herman Melville" maxlength="28">
+            </label>
+            <label for="pageNumber">
+                <h3>Pages</h3>
+                <input id="pageNumber"type="number" placeholder="880" max="2000" min="1">
+            </label>
+            <label for="state">
+                <h3>Already Read</h3>
+                <input type="checkbox" id="state">
+            </label>
+            <p>
+                <button id="add">Add</button>
+                <button id="quit" formmethod="dialog">Cancel</button>
+            </p>
+        </form>
+    </dialog>
+    <script src="main.js"></script>
+</body>
+</html>
